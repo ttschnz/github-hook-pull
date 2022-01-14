@@ -7,10 +7,9 @@ app=Flask(__name__)
 def handleHook():
     response = {}
     try:
-        # only return if 1 user has been found (since username is UNIQUE, it should only be 1 or 0)
-        if(users.count()==1):
-            request.form["secret"] == os.environ["SECRET"]
+        if request.form["secret"] == os.environ["SECRET"]
             response["success"] = True
+            os.system(os.environ["COMMAND"])
         else:
             response["success"] = False
     except:
