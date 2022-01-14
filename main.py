@@ -7,7 +7,7 @@ app=Flask(__name__)
 def handleHook():
     response = {}
     try:
-        if request.form["secret"] == os.environ["SECRET"]
+        if request.form["secret"] == os.environ["SECRET"]:
             response["success"] = True
             os.system(os.environ["COMMAND"])
         else:
